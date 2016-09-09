@@ -12,12 +12,10 @@ error_reporting(E_ALL);
 
     $app = new Silex\Application();
     
-    $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../views'
-    ));
+    $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
     $app->get("/", function() use ($app) {
-      return $app['twig']->render('address-book.html.twig').end($_SESSION['contacts'])->name;
+      return $app['twig']->render('address-book.html.twig', array('contacts' => Contact::getAll()));
     });
 
     $app->post("/add-contact", function() use ($app) {

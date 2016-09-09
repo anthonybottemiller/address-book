@@ -4,20 +4,36 @@
   <title>Address Book</title>
 </head>
 <body>
-  <div>
+  <div class="container">
     <h1>Address Book</h1>
-    <form action="/add-contact" method="post">
-      <label for='name'>Name</label>
-      <input id='name' type="text" name="name" class="form-control">
-      <br>
-      <label for='address'>Address</label>
-      <input id='address' type="text" name="address" class="form-control">
-      <br>
-      <label for='phone-number'>Phone Number</label>
-      <input id='phone-number' type="tel" name="phone-number">
-      <br>
-      <button type='submit' class='btn-success'>Add Contact</button>
-    </form>
+    <div class="input-form">
+      <form action="/add-contact" method="post">
+        <label for='name'>Name</label>
+        <input id='name' type="text" name="name" class="form-control">
+        <br>
+        <label for='address'>Address</label>
+        <input id='address' type="text" name="address" class="form-control">
+        <br>
+        <label for='phone-number'>Phone Number</label>
+        <input id='phone-number' type="tel" name="phone-number">
+        <br>
+        <button type='submit' class='btn-success'>Add Contact</button>
+      </form>
+    </div>
+    <div class="contacts">
+    {% if contacts is not empty %}
+        <p>Contacts:</p>
+        <ul>
+          {% for contact in contacts %}
+          <ul>
+            <li>{{ contact.name }}</li>
+            <li>{{ contact.address }}</li>
+            <li>{{ contact.phone_number}}</li>
+          </ul>
+          {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
   </div>
 </body>
 </html>
