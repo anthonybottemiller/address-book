@@ -21,7 +21,12 @@ error_reporting(E_ALL);
     $app->post("/add-contact", function() use ($app) {
       $new_contact = new Contact($_POST['name'], $_POST['address'], $_POST['phone-number']);
       $new_contact->save();
-      return $app['twig']->render('new-contact.html.twig');
+      return $app['twig']->render('address-book.html.twig', array('contacts' => Contact::getAll()));
+    });
+
+    $app->post("/delete-all", function() use ($app) {
+      Contact::deleteAll();
+      return $app['twig']->render('address-book.html.twig', array('contacts' => Contact::getAll()));
     });
     return $app;
 ?>

@@ -20,4 +20,8 @@
       {
         return $_SESSION['contacts'];
       }
+      static function deleteAll()
+      {
+        $_SESSION['contacts'] = array();
+      }
     }

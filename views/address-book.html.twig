@@ -19,6 +19,9 @@
         <br>
         <button type='submit' class='btn-success'>Add Contact</button>
       </form>
+      <form action="/delete-all" method="post">
+        <button type="submit" class="btn-warning">Delete All Contacts</button>
+      </form>
     </div>
     <div class="contacts">
     {% if contacts is not empty %}
