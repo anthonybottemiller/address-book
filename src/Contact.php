@@ -18,6 +18,6 @@
       }
       static function getAll()
       {
-        return $_SESSION['list_of_tasks'];
+        return $_SESSION['contacts'];
       }
     }

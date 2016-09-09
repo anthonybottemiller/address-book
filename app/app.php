@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
     date_default_timezone_set('America/Los_Angeles');
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/Contact.php";
@@ -14,13 +17,13 @@
     ));
 
     $app->get("/", function() use ($app) {
-      return $app['twig']->render('address-book.html.twig');
+      return $app['twig']->render('address-book.html.twig').end($_SESSION['contacts'])->name;
     });
 
-    $app->get("/add-contact", function() use ($app) {
-      $new_contact = new Contact($_GET['name'], $_GET['address'], $_GET['phone-number']);
+    $app->post("/add-contact", function() use ($app) {
+      $new_contact = new Contact($_POST['name'], $_POST['address'], $_POST['phone-number']);
       $new_contact->save();
-      return $_SESSION['contacts'][0]->name;
+      return $app['twig']->render('new-contact.html.twig');
     });
     return $app;
 ?>
