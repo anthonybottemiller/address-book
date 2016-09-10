@@ -16,6 +16,8 @@ This page is intended to enable a user to keep many contacts and features the ab
 * BOOTSTRAP
 * PHP
 * Composer
+* Silex
+* Twig
 
 ##Requirements
 
