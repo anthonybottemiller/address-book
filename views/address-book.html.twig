@@ -6,41 +6,39 @@
   <title>Address Book</title>
 </head>
 <body>
-  <div class="row">
-    <div class="container col-md-6">
-      <h1>Address Book</h1>
-      <div class="input-form">
-        <form action="/add-contact" method="post">
-          <label for='name'>Name</label>
-          <input id='name' type="text" name="name" class="form-control">
-          <br>
-          <label for='address'>Address</label>
-          <input id='address' type="text" name="address" class="form-control">
-          <br>
-          <label for='phone-number'>Phone Number</label>
-          <input id='phone-number' type="tel" name="phone-number" class="form-control">
-          <br>
-          <button type='submit' class='home-buttons btn-success btn-lg'>Add Contact</button>
-        </form>
-        <form action="/delete-all" method="post">
-          <button type="submit" class="home-buttons btn-danger btn-lg">Delete All Contacts</button>
-        </form>
-      </div>
+  <div class="container col-sm-6">
+    <h1>Address Book</h1>
+    <div class="input-form">
+      <form action="/add-contact" method="post">
+        <label for='name'>Name</label>
+        <input id='name' type="text" name="name" class="form-control">
+        <br>
+        <label for='address'>Address</label>
+        <input id='address' type="text" name="address" class="form-control">
+        <br>
+        <label for='phone-number'>Phone Number</label>
+        <input id='phone-number' type="tel" name="phone-number" class="form-control">
+        <br>
+        <button type='submit' class='home-buttons btn-success btn-lg'>Add Contact</button>
+      </form>
+      <form action="/delete-all" method="post">
+        <button type="submit" class="home-buttons btn-danger btn-lg">Delete All Contacts</button>
+      </form>
     </div>
-    <div class="contacts col-md-6">
-      <h2>Contacts:</h2>
-        {% if contacts is not empty %}
+  </div>
+  <div class="contacts col-sm-6">
+    <h2>Contacts:</h2>
+      {% if contacts is not empty %}
+      <ul>
+        {% for contact in contacts %}
+        <li>Name: {{ contact.getName }}</li>
         <ul>
-          {% for contact in contacts %}
-          <li>Name: {{ contact.getName }}</li>
-          <ul>
-            <li>Address: {{ contact.getAddress }}</li>
-            <li>Phone Number: {{ contact.getPhone }}</li>
-          </ul>
-          {% endfor %}
+          <li>Address: {{ contact.getAddress }}</li>
+          <li>Phone Number: {{ contact.getPhone }}</li>
         </ul>
-        {% endif %}
-    </div>
+        {% endfor %}
+      </ul>
+      {% endif %}
   </div>
 </body>
 </html>
