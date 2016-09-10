@@ -6,7 +6,7 @@
   <title>Address Book</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container col-lg-6">
     <h1>Address Book</h1>
     <div class="input-form">
       <form action="/add-contact" method="post">
@@ -25,20 +25,20 @@
         <button type="submit" class="home-buttons btn-danger btn-lg">Delete All Contacts</button>
       </form>
     </div>
-    <div class="contacts">
-    {% if contacts is not empty %}
-        <p>Contacts:</p>
-        <ul>
-          {% for contact in contacts %}
-          <li>Name: {{ contact.getName }}</li>
-          <ul>
-            <li>Address: {{ contact.getAddress }}</li>
-            <li>Phone Number: {{ contact.getPhone }}</li>
-          </ul>
-          {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
   </div>
+  <div class="contacts col-lg-6">
+  {% if contacts is not empty %}
+      <p>Contacts:</p>
+      <ul>
+        {% for contact in contacts %}
+        <li>Name: {{ contact.getName }}</li>
+        <ul>
+          <li>Address: {{ contact.getAddress }}</li>
+          <li>Phone Number: {{ contact.getPhone }}</li>
+        </ul>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
 </body>
 </html>

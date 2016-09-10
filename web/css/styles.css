@@ -1,12 +1,26 @@
 body {
+  color: white;
   text-align: center;
+  background-color: #15FFB7;
+}
+
+.container {
+  margin: 10px;
+  background-color: #4A8699;
+  border: #4A8699 solid 20px;
+  border-radius: 20px 20px;
+}
+
+.contacts {
+  margin: 10px;
+  background-color: #4A8699;
+  border: #4A8699 solid 20px;
+  border-radius: 20px 20px;
 }
 
 .home-buttons{
+  margin-bottom: 20px;
   margin-right: 20px;
   float: left;
 }
 
-.container {
-  width: 30%;
-}
