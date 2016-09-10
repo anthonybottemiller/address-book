@@ -29,10 +29,10 @@
         <p>Contacts:</p>
         <ul>
           {% for contact in contacts %}
-          <li>Name: {{ contact.name }}</li>
+          <li>Name: {{ contact.getName }}</li>
           <ul>
-            <li>Address: {{ contact.address }}</li>
-            <li>Phone Number: {{ contact.phone_number}}</li>
+            <li>Address: {{ contact.getAddress }}</li>
+            <li>Phone Number: {{ contact.getPhone }}</li>
           </ul>
           {% endfor %}
         </ul>
