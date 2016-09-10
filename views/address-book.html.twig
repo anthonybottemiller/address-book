@@ -28,8 +28,8 @@
         <p>Contacts:</p>
         <ul>
           {% for contact in contacts %}
+          <li>{{ contact.name }}</li>
           <ul>
-            <li>{{ contact.name }}</li>
             <li>{{ contact.address }}</li>
             <li>{{ contact.phone_number}}</li>
           </ul>
