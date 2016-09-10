@@ -20,8 +20,16 @@ This page is intended to enable a user to keep many contacts and features the ab
 * Twig
 
 ##Requirements
+* Modern Web Browser
+* Composer (For installing dependent technologies)
+* Internet Access
 
 ##Installation
+* Clone repository
+* Using command line change working directory to cloned repository
+* Execute command "composer install"
+* Start web server with document root address-book/web
+* Navigate to web server using Modern Web Browser
 
 ##Legal
 Copyright (c) 2016 Anthony J Bottemiller
