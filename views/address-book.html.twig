@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <title>Address Book</title>
 </head>
 <body>
@@ -15,12 +16,12 @@
         <input id='address' type="text" name="address" class="form-control">
         <br>
         <label for='phone-number'>Phone Number</label>
-        <input id='phone-number' type="tel" name="phone-number">
+        <input id='phone-number' type="tel" name="phone-number" class="form-control">
         <br>
         <button type='submit' class='btn-success'>Add Contact</button>
       </form>
       <form action="/delete-all" method="post">
-        <button type="submit" class="btn-warning">Delete All Contacts</button>
+        <button type="submit" class="btn-danger">Delete All Contacts</button>
       </form>
     </div>
     <div class="contacts">
