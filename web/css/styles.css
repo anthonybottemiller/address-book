@@ -12,6 +12,7 @@ body {
 }
 
 .contacts {
+  width: 33%;
   margin: 10px;
   background-color: #4A8699;
   border: #4A8699 solid 20px;

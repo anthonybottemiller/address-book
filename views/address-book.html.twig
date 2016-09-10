@@ -27,8 +27,8 @@
     </div>
   </div>
   <div class="contacts col-lg-6">
-  {% if contacts is not empty %}
-      <p>Contacts:</p>
+    <h2>Contacts:</h2>
+      {% if contacts is not empty %}
       <ul>
         {% for contact in contacts %}
         <li>Name: {{ contact.getName }}</li>
