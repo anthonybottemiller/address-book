@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+
+.home-buttons{
+  margin-right: 20px;
+  float: left;
+}
+
+.container {
+  width: 30%;
+}
